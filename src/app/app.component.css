@@ -1,0 +1,7 @@
+.appTitle {
+       margin: auto;
+       width: 200px;       
+       --background-color: lightgray;   
+       --border: 1px solid green;
+       text-align: center
+}
