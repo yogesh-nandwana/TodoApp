@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from "@angular/core";
+import { TodoDataService } from '../todo-data.service';
 
 @Component({
   selector: 'app-todo-bar',
@@ -7,12 +8,13 @@ import { Input } from "@angular/core";
   styleUrls: ['./todo-bar.component.css']
 })
 export class TodoBarComponent implements OnInit {
-  todoToAdd:string;
-  constructor() {}
+  todoToAdd: string;
+  constructor(private todoDataService: TodoDataService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  addTodo(todo){    
-      console.log(this.todoToAdd);
+  addTodo(todo) {
+    console.log(this.todoToAdd);
+    this.todoDataService.addTodo(this.todoToAdd);
   }
 }
