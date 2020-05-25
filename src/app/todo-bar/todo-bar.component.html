@@ -1,0 +1,15 @@
+<div class="input-group mb-3">
+  <input type="text" [(ngModel)]="todoToAdd" (keyup.enter)="addTodo()" class="form-control" required
+    minlength="4" #todoTxt="ngModel" placeholder="Type todo text here..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">   
+    <button class="btn btn-outline-secondary" type="button" (click)='addTodo()'>+</button>
+  </div>
+</div>
+<div *ngIf="todoTxt.invalid && (todoTxt.dirty || todoTxt.touched)" class="alert alert-danger">
+  <div *ngIf="todoTxt.errors.required">
+    Todo is required.
+  </div>
+  <div *ngIf="todoTxt.errors.minlength">
+    Todo must be at least 4 characters long.
+  </div>
+</div>
