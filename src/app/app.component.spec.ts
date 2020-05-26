@@ -1,11 +1,18 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { TodoBarComponent } from './todo-bar/todo-bar.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoDataService } from './todo-data.service';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ FormsModule ],
       declarations: [
-        AppComponent
+        AppComponent,
+        TodoBarComponent,
+        TodoListComponent  
       ],
     }).compileComponents();
   }));
@@ -16,13 +23,13 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'TodoApp'`, () => {
+  xit(`should have as title 'TodoApp'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('TodoApp');
+    expect(app.appTitle).toEqual('My Todo`s');
   });
 
-  it('should render title in a h1 tag', () => {
+  xit('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;

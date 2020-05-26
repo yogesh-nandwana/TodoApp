@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TodoBarComponent } from './todo-bar.component';
-import { describe } from "@types/jasmine";
+import { FormsModule } from '@angular/forms';
 
 describe('TodoBarComponent', () => {
   let component: TodoBarComponent;
@@ -9,6 +9,7 @@ describe('TodoBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+       imports: [ FormsModule ],
       declarations: [ TodoBarComponent ]
     })
     .compileComponents();
