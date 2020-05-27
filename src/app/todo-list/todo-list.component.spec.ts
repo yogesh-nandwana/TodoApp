@@ -11,8 +11,7 @@ describe('TodoListComponent', () => {
     TestBed.configureTestingModule({
       imports: [ FormsModule ],
       declarations: [ TodoListComponent ]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

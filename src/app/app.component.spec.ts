@@ -9,11 +9,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ FormsModule ],
-      declarations: [
-        AppComponent,
-        TodoBarComponent,
-        TodoListComponent  
-      ],
+      declarations: [AppComponent,TodoBarComponent,TodoListComponent],
     }).compileComponents();
   }));
 
@@ -23,16 +19,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  xit(`should have as title 'TodoApp'`, () => {
+  it(`should have as title 'TodoApp'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    const app = fixture.debugElement.componentInstance;    
     expect(app.appTitle).toEqual('My Todo`s');
   });
 
-  xit('should render title in a h1 tag', () => {
+  it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to TodoApp!');
+    expect(compiled.querySelector('h1').textContent).toContain('My Todo`s');
   });
 });

@@ -11,8 +11,7 @@ describe('TodoBarComponent', () => {
     TestBed.configureTestingModule({
        imports: [ FormsModule ],
       declarations: [ TodoBarComponent ]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
