@@ -1,7 +1,11 @@
  <ul class="list-group">
     <li class="list-group-item" *ngFor="let todo of todos">
-      <div class="todo">
-        <span>{{todo.text}}</span> 
-      </div>
+      <div>
+        <span class="completed_checkbox">
+          <input type="checkbox" [checked]=todo.completed (change)="todo.completed=!todo.completed" name="completed" title="Mark Todo completion here">
+        </span>
+        <span [ngStyle]="{color:todo.completed?'green':'orange'}">{{todo.text}}</span>     
+        <span class="delete">x</span>
+      </div>         
     </li>  
   </ul>
