@@ -13,12 +13,12 @@ export class TodoBarComponent implements OnInit {
 
   ngOnInit() {}
 
-  isInvalidTodo(){
+  isValidTodo(){
     return this.todoToAdd.trim().length>3;
   }
 
   addTodo() {
-    if(this.isInvalidTodo()){
+    if(this.isValidTodo()){
       console.log(this.todoToAdd);
       this.todoDataService.addTodo(this.todoToAdd);
     }else{

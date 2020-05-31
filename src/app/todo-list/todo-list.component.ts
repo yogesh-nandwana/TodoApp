@@ -15,4 +15,13 @@ export class TodoListComponent implements OnInit {
   ngOnInit() {
     this.todos = this.todoDataService.getAllTodos();
   }
+
+  deleteTodo(todoToDelete:Todo){
+    console.log(todoToDelete);
+    this.todos =  this.todos.filter(todo => {
+      if(todo.id!=todoToDelete.id){
+         return todo;
+      }
+    });
+  }
 }
