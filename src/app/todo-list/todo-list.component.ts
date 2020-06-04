@@ -8,20 +8,22 @@ import { Todo } from '../todo';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  todos: Todo [] = [];
+  todos: Todo[] = [];
 
   constructor(private todoDataService: TodoDataService) { }
 
   ngOnInit() {
-    this.todos = this.todoDataService.getAllTodos();
+    this.todoDataService.getAllTodos().subscribe(data => this.todos = data);
   }
 
-  deleteTodo(todoToDelete:Todo){
-    console.log(todoToDelete);
-    this.todos =  this.todos.filter(todo => {
-      if(todo.id!=todoToDelete.id){
-         return todo;
-      }
+  deleteTodo(todoToDelete: Todo) {
+    this.todoDataService.deleteTodoById(todoToDelete.id).subscribe(data => {
+      console.log(data);
+      this.todos = this.todos.filter(todo => {
+        if (todo.id != todoToDelete.id) {
+          return todo;
+        }
+      });
     });
   }
 }

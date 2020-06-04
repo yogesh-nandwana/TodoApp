@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Todo } from './todo';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+const REST_URL = "https://my-json-server.typicode.com/yogesh-nandwana/TodoApp/todos";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoDataService {
+ 
   lastId: number = 0;
 
   todos:Todo[]=[
@@ -15,19 +20,21 @@ export class TodoDataService {
     { id: 5, userId: 'dev', text: 'TestTodo-5', completed: true }
   ];
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   // Simulate POST /todos
   addTodo(todoTxt:string): TodoDataService {
     let id = ++this.lastId;
-    this.todos.push({ id:id,userId:'jk',text:todoTxt,completed: false });
+    this.todos.push({id:id,userId:'jk',text:todoTxt,completed:false});
     return this;
   }
 
   // Simulate DELETE /todos/:id
-  deleteTodoById(id: number): TodoDataService {
-    this.todos = this.todos.filter(todo => todo.id !== id);
-    return this;
+  deleteTodoById(id: number):Observable<null> {
+    let endPoint = "/"+id;
+    return this.http.delete<null>(REST_URL+endPoint);
+    //this.todos = this.todos.filter(todo => todo.id !== id);
+    //return this;
   }
 
   // Simulate PUT /todos/:id
@@ -41,8 +48,8 @@ export class TodoDataService {
   }
 
   // Simulate GET /todos
-  getAllTodos():Todo[] {
-    return this.todos;
+  getAllTodos(): Observable<Todo[]>{
+    return this.http.get<Todo[]>(REST_URL);
   }
 
   // Simulate GET /todos/:id
