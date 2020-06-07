@@ -6,6 +6,7 @@ import { TodoBarComponent } from './todo-bar/todo-bar.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoDataService } from './todo-data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule
   ],
-  providers: [TodoDataService],
+  providers: [TodoDataService,ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

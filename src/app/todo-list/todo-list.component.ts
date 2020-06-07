@@ -13,17 +13,17 @@ export class TodoListComponent implements OnInit {
   constructor(private todoDataService: TodoDataService) { }
 
   ngOnInit() {
-    this.todoDataService.getAllTodos().subscribe(data => this.todos = data);
+    this.getTodos();
+  }
+
+  getTodos() {
+    this.todoDataService.getAllTodos().subscribe(response => this.todos = response);
   }
 
   deleteTodo(todoToDelete: Todo) {
-    this.todoDataService.deleteTodoById(todoToDelete.id).subscribe(data => {
-      console.log(data);
-      this.todos = this.todos.filter(todo => {
-        if (todo.id != todoToDelete.id) {
-          return todo;
-        }
-      });
+    this.todoDataService.deleteTodoById(todoToDelete.id).subscribe(response => {
+      console.log(response);
+      this.todos = this.todos.filter(todo => todo.id !== todoToDelete.id);
     });
   }
 }

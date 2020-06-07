@@ -11,18 +11,18 @@ export class TodoBarComponent implements OnInit {
   todoToAdd: string;
   constructor(private todoDataService: TodoDataService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  isValidTodo(){
-    return this.todoToAdd.trim().length>3;
+  isValidTodo() {
+    return this.todoToAdd.trim().length > 3;
   }
 
   addTodo() {
-    if(this.isValidTodo()){
+    if (this.isValidTodo()) {
       console.log(this.todoToAdd);
       this.todoDataService.addTodo(this.todoToAdd);
-    }else{
+    } else {
       console.warn(`Invalid todo:${this.todoToAdd}`);
-    }    
-  }  
+    }
+  }
 }
