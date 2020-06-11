@@ -3,7 +3,8 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Todo } from './todo';
 
-const REST_URL = "https://my-json-server.typicode.com/yogesh-nandwana/TodoApp/todos";
+//const REST_URL = "https://my-json-server.typicode.com/yogesh-nandwana/TodoApp/todos";
+const REST_URL = "http://localhost:3000/todos";
 
 @Injectable({
   providedIn: 'root'
