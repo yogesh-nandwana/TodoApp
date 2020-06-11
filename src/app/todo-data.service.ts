@@ -14,13 +14,10 @@ export class TodoDataService {
 
   constructor(private apiService: ApiService) { }
 
-  addTodo(todoTxt: string) {
+  addTodo(todoTxt: string):Observable<Todo> {
     let id = ++this.lastId;
     let newTodo = { id: id, userId: 'jk', text: todoTxt, completed: false };
-    this.apiService.createTodo(newTodo).subscribe((response) => {
-      console.log(response);
-      this.todos.push(newTodo);
-    });
+    return this.apiService.createTodo(newTodo);
   }
 
   deleteTodoById(id: number): Observable<null> {

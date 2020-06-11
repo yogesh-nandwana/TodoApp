@@ -3,6 +3,6 @@
     <h1>{{appTitle}}</h1>
   </div>
   <br>
-  <app-todo-bar></app-todo-bar>
-  <app-todo-list></app-todo-list>
+  <app-todo-bar (add)="onAddTodo($event)"></app-todo-bar>
+  <app-todo-list [todos]="todos" (delete)="onDeleteTodo($event)" (toggle)="onToggleTodo($event)"></app-todo-list>
 </div>

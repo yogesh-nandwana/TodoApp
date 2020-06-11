@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Input } from "@angular/core";
 import { TodoDataService } from '../todo-data.service';
 
@@ -9,7 +9,11 @@ import { TodoDataService } from '../todo-data.service';
 })
 export class TodoBarComponent implements OnInit {
   todoToAdd: string;
-  constructor(private todoDataService: TodoDataService) { }
+
+  @Output() 
+  add : EventEmitter<string> = new EventEmitter();
+  
+  constructor() { }
 
   ngOnInit() { }
 
@@ -20,7 +24,7 @@ export class TodoBarComponent implements OnInit {
   addTodo() {
     if (this.isValidTodo()) {
       console.log(this.todoToAdd);
-      this.todoDataService.addTodo(this.todoToAdd);
+      this.add.emit(this.todoToAdd);
     } else {
       console.warn(`Invalid todo:${this.todoToAdd}`);
     }

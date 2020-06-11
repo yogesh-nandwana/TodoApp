@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TodoDataService } from '../todo-data.service';
 import { Todo } from '../todo';
 
@@ -8,22 +8,24 @@ import { Todo } from '../todo';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
+  @Input()
   todos: Todo[] = [];
 
-  constructor(private todoDataService: TodoDataService) { }
+  @Output()
+  delete:EventEmitter<Todo> = new EventEmitter();
 
-  ngOnInit() {
-    this.getTodos();
-  }
+  @Output()
+  toggle:EventEmitter<Todo> = new EventEmitter();
 
-  getTodos() {
-    this.todoDataService.getAllTodos().subscribe(response => this.todos = response);
-  }
+  constructor() {}
+
+  ngOnInit() {}
 
   deleteTodo(todoToDelete: Todo) {
-    this.todoDataService.deleteTodoById(todoToDelete.id).subscribe(response => {
-      console.log(response);
-      this.todos = this.todos.filter(todo => todo.id !== todoToDelete.id);
-    });
+   this.delete.emit(todoToDelete);
   }
+
+  toggleTodo(todo:Todo){
+    this.toggle.emit(todo);
+  }  
 }
