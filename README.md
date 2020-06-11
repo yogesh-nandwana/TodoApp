@@ -22,3 +22,6 @@ $ curl -X POST -H "Content-Type: application/json" -d '{
 "http://localhost:3000/todos" </br>
 
 curl -X GET "http://localhost:3000/todos?id=1&userId=jk" </br>
+
+# Open issues
+Enter key is not disabled for blank todo,causing addition

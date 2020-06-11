@@ -22,7 +22,7 @@ export class TodoBarComponent implements OnInit {
   }
 
   addTodo() {
-    if (this.isValidTodo()) {
+    if (this.todoToAdd && this.isValidTodo()) {
       console.log(this.todoToAdd);
       this.add.emit(this.todoToAdd);
     } else {
