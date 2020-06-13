@@ -26,6 +26,7 @@ export class TodoListComponent implements OnInit {
   }
 
   toggleTodo(todo:Todo){
+    todo.completed=!todo.completed
     this.toggle.emit(todo);
   }  
 }

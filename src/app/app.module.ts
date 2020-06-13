@@ -7,12 +7,16 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoDataService } from './todo-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
+import { TodoHeaderComponent } from './todo-header/todo-header.component';
+import { TodoFooterComponent } from './todo-footer/todo-footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoBarComponent,
-    TodoListComponent    
+    TodoListComponent,
+    TodoHeaderComponent,
+    TodoFooterComponent    
   ],
   imports: [
     BrowserModule,

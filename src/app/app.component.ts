@@ -8,8 +8,6 @@ import { Todo } from './todo';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  appTitle = 'My Todo`s';
-
   todos: Todo[] = [];
 
   constructor(private todoDataService: TodoDataService) { }
