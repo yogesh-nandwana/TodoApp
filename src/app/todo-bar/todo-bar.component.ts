@@ -18,7 +18,8 @@ export class TodoBarComponent implements OnInit {
   ngOnInit() { }
 
   isValidTodo() {
-    return this.todoToAdd.trim().length > 3;
+    let len = this.todoToAdd.trim().length;
+    return  len>3 && len < 31;
   }
 
   addTodo() {
