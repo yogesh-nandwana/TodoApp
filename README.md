@@ -25,9 +25,9 @@ $ curl -X POST -H "Content-Type: application/json" -d '{
 curl -X GET "http://localhost:3000/todos?id=1&userId=jk" </br>
 
 # Open issues
-create todo component to include completed time
-search todo component
-checkbox to only display completed todos
-display completion time for completed todos
-home|about link in header component(with routing)
-moving all custom component/services to their respective folder
+create todo component to include completed time</br>
+search todo component</br>
+checkbox to only display completed todos</br>
+display completion time for completed todos</br>
+home|about link in header component(with routing)</br>
+moving all custom component/services to their respective folder</br>
