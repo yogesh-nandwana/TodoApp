@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TodoDataService } from '../todo-data.service';
 import { Todo } from '../todo';
+import { todosObj } from 'src/todos';
 
 @Component({
   selector: 'app-todo-list',
@@ -29,4 +30,12 @@ export class TodoListComponent implements OnInit {
     todo.completed=!todo.completed
     this.toggle.emit(todo);
   }  
+
+  findStyle(todo:Todo){
+    if(todo.completed){
+      return {color:'green','text-decoration':'line-through'};
+    }else{
+      return {color:'orange','text-decoration':'none'};
+    }    
+  }
 }

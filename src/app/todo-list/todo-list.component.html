@@ -4,7 +4,7 @@
         <span class="completed_checkbox">
           <input type="checkbox" [checked]=todo.completed (change)="toggleTodo(todo)" name="completed" title="Mark Todo completion here">
         </span>
-        <span [ngStyle]="{color:todo.completed?'green':'orange'}">{{todo.text}}</span>     
+        <span [ngStyle]="findStyle(todo)">{{todo.text}}</span>     
         <span class="delete" (click)='deleteTodo(todo)'>x</span>
       </div>         
     </li>  

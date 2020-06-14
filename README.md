@@ -1,14 +1,15 @@
 # TodoApp repositoy
-A repo which is planned to house brand new TodoApp in 2020!
+A code repo which is planned to house brand new TodoApp in 2020!
 
-# Access sample json response using below url
+# Access sample todos response json response using below url
 https://my-json-server.typicode.com/yogesh-nandwana/TodoApp/db </br>
 https://my-json-server.typicode.com/yogesh-nandwana/TodoApp/todos
 
 # Setting up json-server locally
 $ npm install -g json-server </br>
-Create a file called db.json(with required json) and add to the project folder </br>
-$ json-server --watch db.json
+Create a file called db.json(with required json conent) and add to the project folder </br>
+$ json-server --watch db.json </br>
+Above command can be run directly by invoking "npm run jsonserver"(As its defined as script inside package.json)
 
 # Below command invokes GET request on sample db resource
 curl -X GET "http://localhost:3000/todos" </br>
@@ -24,3 +25,11 @@ $ curl -X POST -H "Content-Type: application/json" -d '{
 curl -X GET "http://localhost:3000/todos?id=1&userId=jk" </br>
 
 # Open issues
+create todo component to include completed time
+search todo component
+checkbox to only display completed todos
+display completion time for completed todos
+home|about link in header component(with routing)
+moving all custom component/services to their respective folder
+set text-decoration=line-through for completed todos
+change todo class to interface
