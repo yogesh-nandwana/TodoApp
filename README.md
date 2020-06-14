@@ -31,5 +31,3 @@ checkbox to only display completed todos
 display completion time for completed todos
 home|about link in header component(with routing)
 moving all custom component/services to their respective folder
-set text-decoration=line-through for completed todos
-change todo class to interface
