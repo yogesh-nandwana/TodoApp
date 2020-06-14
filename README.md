@@ -30,4 +30,3 @@ search todo component</br>
 checkbox to only display completed todos</br>
 display completion time for completed todos</br>
 home|about link in header component(with routing)</br>
-moving all custom component/services to their respective folder</br>
