@@ -24,7 +24,7 @@ $ curl -X POST -H "Content-Type: application/json" -d '{
 
 curl -X GET "http://localhost:3000/todos?id=1&userId=jk" </br>
 
-# Open issues
+# Pending tasks
 create todo component to include completed time</br>
 search todo component</br>
 checkbox to only display completed todos</br>

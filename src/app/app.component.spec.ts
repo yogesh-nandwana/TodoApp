@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { TodoBarComponent } from './todo-bar/todo-bar.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoBarComponent } from './components/todo-bar/todo-bar.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoDataService } from './todo-data.service';
 import { FormsModule } from '@angular/forms';
 
