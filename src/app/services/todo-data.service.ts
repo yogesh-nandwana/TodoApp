@@ -34,20 +34,9 @@ export class TodoDataService {
     return todo;
   }
 
-  updateTodoById(id: number, todoWithUpdates: Object = {}) {
-    let todo = this.getTodoById(id);
-    if (todo) {
-      this.apiService.updateTodo(todo).subscribe((response) => {
-        console.log(response);
-        Object.assign(todo, todoWithUpdates);
-      });
-    } else {
-      console.warn("No todo found with id:" + id);
-    }
-  }
-
-  toggleTodoComplete(id: number, todoTxt: string, complete: boolean) {
-    let updatedTodo = this.updateTodoById(id, { complete: !complete });
-    return updatedTodo;
-  }
+  toggleTodoComplete(todoToUpdate:Todo) {    
+    this.apiService.updateTodo(todoToUpdate).subscribe((response) => {
+      console.log(response);      
+    });
+  } 
 }
