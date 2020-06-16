@@ -3,20 +3,17 @@ import { Todo } from '../model/todo';
 import { ApiService } from './api.service';
 import { TODOS } from '../model/mock-todos';
 import { Observable } from 'rxjs';
+import { todosObj } from '../model/todos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoDataService {
-  lastId: number = 5;
-
   todos: Todo[] = TODOS;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {}
 
-  addTodo(todoTxt: string):Observable<Todo> {
-    let id = ++this.lastId;
-    let newTodo = { id: id, userId: 'jk', text: todoTxt, completed: false };
+  addTodo(newTodo: Todo):Observable<Todo> {   
     return this.apiService.createTodo(newTodo);
   }
 

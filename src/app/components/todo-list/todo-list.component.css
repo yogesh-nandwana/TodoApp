@@ -5,6 +5,15 @@
     top: 0;
     padding: 12px 16px 12px 16px;
   }
+
+  .completed_on{
+    position: absolute;
+    right: 20;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+    font: italic small-caps;
+    color: maroon;
+  }
   
   .delete:hover {
     background-color: red;

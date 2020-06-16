@@ -2,10 +2,12 @@
     <li class="list-group-item" *ngFor="let todo of todos">
       <div>
         <span class="completed_checkbox">
-          <input type="checkbox" [checked]=todo.completed (change)="toggleTodo(todo)" name="completed" title="Mark Todo completion here">
+          <input type="checkbox" [checked]=todo.completed (change)="toggleTodo(todo)" name="completed" 
+                 title="Mark Todo completion here">
         </span>
         <span [ngStyle]="findStyle(todo)">{{todo.text}}</span>     
         <span class="delete" (click)='deleteTodo(todo)'>x</span>
+        <span ng-if="todo.completed" class="completed_on">{{todo.completedOn}}</span>
       </div>         
     </li>  
   </ul>

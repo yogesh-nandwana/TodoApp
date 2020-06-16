@@ -24,10 +24,19 @@ export class AppComponent implements OnInit {
   }
 
   onAddTodo(todoToAdd: string) {
-    this.todoDataService.addTodo(todoToAdd).subscribe((response) => {
+    let newTodoId = this.determineNewTodoId();
+    let newTodo = new Todo(newTodoId,'jk',todoToAdd);
+    console.log("NewTodo:",newTodo);
+
+    this.todoDataService.addTodo(newTodo).subscribe((response) => {
       console.log(response);
       this.todos.push(response);
     });;
+  }
+
+  determineNewTodoId():number {
+    let lastTodo  = this.todos[this.todos.length-1];
+    return lastTodo.id+1;
   }
 
   onDeleteTodo(todoToDelete: Todo) { 
