@@ -18,7 +18,8 @@ export class ApiService {
   }
 
   updateTodo(todo: Todo): Observable<Todo> {
-    return this.http.put<Todo>(REST_URL, todo);
+    let endPoint = "/" + todo.id;
+    return this.http.put<Todo>(REST_URL + endPoint, todo);
   }
 
   getTodo(id: number): Observable<Todo> {
