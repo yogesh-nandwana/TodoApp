@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './services/api.service';
 import { TodoHeaderComponent } from './components/todo-header/todo-header.component';
 import { TodoFooterComponent } from './components/todo-footer/todo-footer.component';
+import { AboutComponent } from './components/todo-about/todo-about.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TodoFooterComponent } from './components/todo-footer/todo-footer.compon
     TodoBarComponent,
     TodoListComponent,
     TodoHeaderComponent,
-    TodoFooterComponent    
+    TodoFooterComponent,
+    AboutComponent    
   ],
   imports: [
     BrowserModule,
