@@ -10,6 +10,8 @@ import { ApiService } from './services/api.service';
 import { TodoHeaderComponent } from './components/todo-header/todo-header.component';
 import { TodoFooterComponent } from './components/todo-footer/todo-footer.component';
 import { AboutComponent } from './components/todo-about/todo-about.component';
+import { AppRoutingModule } from './app-routing.module';
+import { TodosComponent } from './components/todos/todos.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { AboutComponent } from './components/todo-about/todo-about.component';
     TodoListComponent,
     TodoHeaderComponent,
     TodoFooterComponent,
-    AboutComponent    
+    AboutComponent,
+    TodosComponent    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [TodoDataService,ApiService],
   bootstrap: [AppComponent]

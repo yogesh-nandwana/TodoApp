@@ -1,0 +1,4 @@
+<div>
+  <app-todo-bar (add)="onAddTodo($event)"></app-todo-bar>
+  <app-todo-list [todos]="todos" (delete)="onDeleteTodo($event)" (toggle)="onToggleTodo($event)"></app-todo-list>
+</div>

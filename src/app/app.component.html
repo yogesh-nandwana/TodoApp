@@ -1,6 +1,5 @@
 <div class="container">
   <app-todo-header></app-todo-header>
-  <app-todo-bar (add)="onAddTodo($event)"></app-todo-bar>
-  <app-todo-list [todos]="todos" (delete)="onDeleteTodo($event)" (toggle)="onToggleTodo($event)"></app-todo-list>
-  <app-todo-footer></app-todo-footer>
+  <router-outlet></router-outlet> 
+  <app-todo-footer></app-todo-footer> 
 </div>

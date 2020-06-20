@@ -4,9 +4,9 @@
       "id": 1,
       "userId": "jk",
       "text": "Collect test report",
-      "completed": true,
+      "completed": false,
       "createdOn": 1592326821550,
-      "completedOn": 1592625051450
+      "completedOn": null
     },
     {
       "id": 2,
@@ -52,13 +52,6 @@
       "id": 7,
       "userId": "jk",
       "text": "Doctor appointment",
-      "completed": false,
-      "createdOn": 1592326821550
-    },
-    {
-      "id": 8,
-      "userId": "jk",
-      "text": "Visit temple",
       "completed": false,
       "createdOn": 1592326821550
     }
