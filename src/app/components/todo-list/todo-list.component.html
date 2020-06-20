@@ -7,7 +7,7 @@
         </span>
         <span [ngStyle]="findStyle(todo)">{{todo.text}}</span>     
         <span class="delete" (click)='deleteTodo(todo)'>x</span>
-        <span ng-if="todo.completed" class="completed_on">{{todo.completedOn}}</span>
+        <span ng-if="todo.completed" class="completed_on">{{todo.completedOn | date:'medium' }}</span>
       </div>         
     </li>  
   </ul>

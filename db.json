@@ -6,43 +6,47 @@
       "text": "Collect test report",
       "completed": true,
       "createdOn": 1592326821550,
-      "completedOn": 1592398788491
+      "completedOn": 1592625051450
     },
     {
       "id": 2,
       "userId": "jk",
       "text": "Pay bill",
-      "completed": false,
-      "createdOn": 1592326821550
+      "completed": true,
+      "createdOn": 1592326821550,
+      "completedOn": 1592625043162
     },
     {
       "id": 3,
       "userId": "kk",
       "text": "Visit bank",
-      "completed": false,
+      "completed": true,
       "createdOn": 1592326821550,
-      "completedOn": null
+      "completedOn": 1592625045394
     },
     {
       "id": 4,
       "userId": "jk",
       "text": "File tax return",
-      "completed": false,
-      "createdOn": 1592326821550
+      "completed": true,
+      "createdOn": 1592326821550,
+      "completedOn": 1592625048618
     },
     {
       "id": 5,
       "userId": "jk",
       "text": "Go to movie",
-      "completed": false,
-      "createdOn": 1592326821550
+      "completed": true,
+      "createdOn": 1592326821550,
+      "completedOn": 1592625227585
     },
     {
       "id": 6,
       "userId": "jk",
       "text": "Attend meeting",
       "completed": false,
-      "createdOn": 1592326821550
+      "createdOn": 1592326821550,
+      "completedOn": null
     },
     {
       "id": 7,
